@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>oktavia imutt lucukkkk🤍</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffe5ec, #fff5f7);
+      overflow: hidden;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 420px;
+      background: white;
+      padding: 35px 25px;
+      border-radius: 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      position: relative;
+      z-index: 2;
+    }
+
+    .emoji {
+      font-size: 65px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      color: #ff5c8a;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    button {
+      border: none;
+      padding: 13px 25px;
+      border-radius: 30px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: 0.2s;
+      margin: 5px;
+    }
+
+    .yes {
+      background: #ff6f9c;
+      color: white;
+    }
+
+    .yes:hover {
+      transform: scale(1.08);
+    }
+
+    .no {
+      background: #eee;
+      color: #555;
+    }
+
+    #message {
+      display: none;
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff8fab;
+      font-size: 20px;
+      animation: jatuh 5s linear infinite;
+      top: -30px;
+    }
+
+    @keyframes jatuh {
+      0% {
+        transform: translateY(-30px) rotate(0deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card" id="awal">
+    <div class="emoji">🥺</div>
+
+    <h1>oktavia arrafi sekar wijaya yang cantikk imutt seduniaa gadaa yang bisaa ngalahinn...</h1>
+    <p>
+      jangan marah terus dongg😭<br>
+      aku mau ngomong sesuatu...
+    </p>
+
+    <button class="yes" onclick="bukaPesan()">
+      buka pesannya🤍
+    </button>
+  </div>
+
+
+  <div class="card" id="message">
+
+    <div class="emoji">🥹🤍</div>
+
+    <h1>maafin aku yaa</h1>
+
+    <p>
+      aku beneran minta maaf kalau tadi aku bikin kamu kesel,
+      marah. aku sadar aku salah,
+      n aku nggak bermaksud bikin kamu sakitt hatii.
+      <br><br>
+
+      jadi sekarang aku mau bilang:
+      <b>maaf yaa oktaaa cantikk🥺</b>
+      <br><br>
+
+      lain kalii benerann akuu ga akann ngulanginn lagii.
+      akuu akann sapaa n bilang bye bye kaloo ketemu kamuu
+    </p>
+
+    <h3 style="color:#ff6f9c; margin-bottom:15px;">
+      maafin aku nggak? 🥺
+    </h3>
+
+    <button class="yes" onclick="maafin()">
+      iya, maafin🤍
+    </button>
+
+    <button class="no" onclick="kabur(this)">
+      belum😤
+    </button>
+
+  </div>
+
+
+  <script>
+
+    function bukaPesan() {
+      document.getElementById("awal").style.display = "none";
+      document.getElementById("message").style.display = "block";
+    }
+
+    function maafin() {
+      document.getElementById("message").innerHTML = `
+        <div class="emoji">😭🤍</div>
+
+        <h1>HOREEE!!</h1>
+
+        <p>
+          makasih yaa udah maafin aku🥹
+          <br><br>
+          jangan marah lagi yaa.
+          akuu benerann gaa akann ngulangin lagii
+        </p>
+      `;
+
+      buatHati();
+    }
+
+    function kabur(button) {
+      button.innerText = "maafin ajaa😭";
+      button.style.transform =
+        "translate(" +
+        (Math.random() * 100 - 50) +
+        "px," +
+        (Math.random() * 60 - 30) +
+        "px)";
+    }
+
+    function buatHati() {
+      for (let i = 0; i < 25; i++) {
+        let heart = document.createElement("div");
+
+        heart.className = "heart";
+        heart.innerHTML = "🤍";
+
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDelay = Math.random() * 3 + "s";
+        heart.style.fontSize =
+          (15 + Math.random() * 20) + "px";
+
+        document.body.appendChild(heart);
+      }
+    }
+
+  </script>
+
+</body>
+</html>
